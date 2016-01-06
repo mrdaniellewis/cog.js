@@ -1,0 +1,17 @@
+{
+	"env": {
+		"browser": true,
+		"mocha": true
+	},
+	"rules": {
+		"semi": [2, "always"],
+		"no-shadow": [2, { "builtinGlobals": true, "hoist": "all", allow: ["$"] } ],
+		"no-undef": 2
+	},
+	"globals": {
+        "expect": false,
+        "cog": false,
+        "$": false,
+        "$$": false
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "cog.js",
+  "version": "1.0.0",
+  "description": "Lightweight browser framework",
+  "author": "Daniel Lewis",
+  "license": "ISC",
+  "devDependencies": {
+    "expect": "^1.13.4",
+    "mocha": "^2.3.4"
+  }
+}

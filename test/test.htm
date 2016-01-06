@@ -1,0 +1,62 @@
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>Mocha Tests</title>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+    <script src="../lib/head.js"></script>
+    <link href="../node_modules/mocha/mocha.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="mocha"></div>
+
+    <!-- These elements are required to run some of the tests -->
+    <div id="test-elements" style="display:none">
+
+        <!-- Used to test selecting in a context -->
+        <div id="test-context">
+            <div>test context inner</div>
+        </div>
+
+        <!-- Used to test converting form.elements to an array -->
+        <form>
+            <input type="radio" name="group">
+            <input type="radio" name="group">
+            <input>
+            <textarea></textarea>
+            <select>
+                <option>
+            </select>
+        </form>       
+
+    </div>
+
+    <script>
+        // This is already set as part of the head test
+        window.original$ = window.$;
+        // This needs to be created
+        window.original$$ = window.$$ = {};
+
+        // Test queueing functions before cog is loaded
+        window.queuedTestValue = {};
+        window.$( function($) {
+            window.queuedTestRun = window.queuedTestValue;
+        } );
+
+    </script> 
+
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/expect/umd/expect.js"></script>
+    <script>mocha.setup('bdd');</script>
+
+    <script src="../lib/cog.js"></script>
+    <script src="test-head.js"></script>
+    <script src="test-cog.js"></script>    
+
+    <script>
+        mocha.checkLeaks();
+        mocha.globals(['cog','$','$$','queuedTestRun','queuedTestValue']);
+        mocha.run();
+    </script> 
+    
+</body>
+</html>
