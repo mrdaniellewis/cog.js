@@ -27,7 +27,7 @@ c.className=c.className.replace(/\bno-js\b/,"js")}(this,document)</script>
 
 	<!-- Document content -->
 
-	<!-- Functions added to $ will be executed after cog has loaded -->
+	<!-- Functions added to $ will be executed after domcontentloaded has been called -->
 	<script>
 		$( function() {
 			// do stuff
@@ -38,3 +38,10 @@ c.className=c.className.replace(/\bno-js\b/,"js")}(this,document)</script>
 	<script src="bundle.js"></script>
 
 ```
+
+## To-do
+
+* Browser test in IE
+* Browser test in Safari / iPhone / iPad
+* Check browser testing screenshots
+* Document
