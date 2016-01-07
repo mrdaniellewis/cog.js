@@ -6,6 +6,8 @@
   "license": "ISC",
   "devDependencies": {
     "expect": "^1.13.4",
+    "gulp": "^3.9.0",
+    "gulp-gh-pages": "^0.5.4",
     "mocha": "^2.3.4"
   }
 }
