@@ -1,1 +1,4 @@
 node_modules
+
+# Temporary directory for the gh-pages gulp task
+.publish
